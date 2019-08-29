@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<h1>Job Form</h1>
+<form action="#" th:action="@{/process}" th:object="${car}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    ID :<input type="text" th:field="*{make}" />
+    <span th:if="${#fields.hasErrors('make')}"
+          th:errors="*{make}"></span><br />
+    Model Name :<input type="text" th:field="*{model}" />
+    <span th:if="${#fields.hasErrors('model')}"
+          th:errors="*{model}"></span>
+    Year :<input type="text" th:field="*{year}" />
+    <span th:if="${#fields.hasErrors('year')}"
+          th:errors="*{year}"></span><br />
+    <br />
+
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
